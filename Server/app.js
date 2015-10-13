@@ -8,14 +8,14 @@ var http = require('http');
 // sync vs async method call. Sync = if needs to blocking
 
 var server = http.createServer(function(request, response) {
-  if request.method != "GET" {
+  if (request.method != "GET") {
     response.writeHead(405, {
       'Allow': 'GET'
       });
     response.end();
     return;
   }
-  if request.url != "/" {
+  if (request.url != "/") {
     response.writeHead(404);
     response.end();
     return;
